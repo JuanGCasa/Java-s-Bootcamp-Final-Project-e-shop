@@ -1,0 +1,24 @@
+Dia 1:
+
+-Primero creé un user admin para acceder a mi schema en MySQL y las dos primeras tablas product y product category para empezar a 'modelar' desde ahí
+
+-Segundo entramos a start.spring.io y creamos el proyecto, dependencias: Spring Data JPA, Rest Repositories, MySQL Driver, Lombok.
+
+-Tercero importamos el proyecto generado desde spring en mi entorno y en su application.properties (vacio por default) le metemos las propiedades de mi schema generado
+
+-Creamos las entidades Product y ProductCategory y las mapie con las columnas de mi tabla. Luego creamos el DAO para poder explorar nuestros datos desde el frontend.
+
+-Luego creamos una configuracion para nuestro DataRest donde deshabilitamos los procesos Put, Post y Delete.
+
+Proseguimos levantando levemente un front:
+-Creamos la clase y servicio de Product. 
+-Una vez que en el servicio definimos la GetProductList, mostramos esta funcionalidad generando el componente Html product-list-grid.component.
+-Adaptamos nuestra lista a un template de main page que nos permita mostrar una barra de busqueda, titulos y secciones.
+-Seteamos Routers para todos nuestros componentes para que carguen a medida que clickeas cada por ejemplo, item a comprar,
+y en especial para que te traiga los items por category.
+
+-Modificamos la app desde Springboot, para que acepte devolver los productos por categoria.
+(http://localhost:8080/api/products/search/findByCategoryId?id=1)
+
+
+
