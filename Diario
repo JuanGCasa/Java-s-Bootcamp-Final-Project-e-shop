@@ -1,4 +1,3 @@
-Dia 1:
 
 -Primero creé un user admin para acceder a mi schema en MySQL y las dos primeras tablas product y product category para empezar a 'modelar' desde ahí
 
@@ -20,5 +19,9 @@ y en especial para que te traiga los items por category.
 -Modificamos la app desde Springboot, para que acepte devolver los productos por categoria.
 (http://localhost:8080/api/products/search/findByCategoryId?id=1)
 
+-Añadimos el metodo implicito findByNameContaining en la spring boot app, y luego desarrollamos un boton de busqueda para buscar productos en el front (search component)
+
+-DEsarrollamos el componente ProductDetail en el front, para que cada vez que clickees en el titulo de un producto o en su imagen te lleve a su pagina con una descripcion. En el back le agregamos support para que te traiga un single product por id 
+(http://localhost:8080/api/products/2)
 
 
