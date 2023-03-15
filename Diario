@@ -24,4 +24,4 @@ y en especial para que te traiga los items por category.
 -DEsarrollamos el componente ProductDetail en el front, para que cada vez que clickees en el titulo de un producto o en su imagen te lleve a su pagina con una descripcion. En el back le agregamos support para que te traiga un single product por id 
 (http://localhost:8080/api/products/2)
 
-
+asd

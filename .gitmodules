@@ -1,0 +1,3 @@
+[submodule "03-frontend/angular-eshop"]
+	path = 03-frontend/angular-eshop
+	url = https://github.com/JuanGCasa/Java-s-Bootcamp-Final-Project-Frontend.git
