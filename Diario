@@ -24,4 +24,5 @@ y en especial para que te traiga los items por category.
 -DEsarrollamos el componente ProductDetail en el front, para que cada vez que clickees en el titulo de un producto o en su imagen te lleve a su pagina con una descripcion. En el back le agregamos support para que te traiga un single product por id 
 (http://localhost:8080/api/products/2)
 
-asd
+-El backend ya tenia soporte para entregar lista de productos segmentados en paginas (PAgeable), pero ahora adaptamos el frontend usando el bootstrap de Angular, ngb-pagination, y creando metodos en nuestros servicios, para que dado un numero de pagina, tamaño y id de la categoria, nos traiga nuestros productos segmentados.
+(TAmbien adaptamos esta dinamica de pagination a la barra de busqueda por texto, por keyword.)
