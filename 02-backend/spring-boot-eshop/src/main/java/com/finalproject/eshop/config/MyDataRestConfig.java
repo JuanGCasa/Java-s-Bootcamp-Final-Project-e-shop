@@ -1,7 +1,9 @@
 package com.finalproject.eshop.config;
 
+import com.finalproject.eshop.entity.Country;
 import com.finalproject.eshop.entity.Product;
 import com.finalproject.eshop.entity.ProductCategory;
+import com.finalproject.eshop.entity.State;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,17 +32,19 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         HttpMethod[] disabledActions = {HttpMethod.DELETE, HttpMethod.PUT, HttpMethod.POST};
 
         //disabling HTTP methods for our Products: PUT, Post, Delete
-        config.getExposureConfiguration()
-                .forDomainType(Product.class)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(disabledActions))
-                        .withCollectionExposure((metdata, HttpMethods) -> HttpMethods.disable(disabledActions));
-
-        config.getExposureConfiguration()
-                .forDomainType(ProductCategory.class)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(disabledActions))
-                .withCollectionExposure((metdata, HttpMethods) -> HttpMethods.disable(disabledActions));
+        disableHttpMethods(Product.class, config, disabledActions);
+        disableHttpMethods(ProductCategory.class, config, disabledActions);
+        disableHttpMethods(Country.class, config, disabledActions);
+        disableHttpMethods(State.class, config, disabledActions);
 
         exposeIds(config);
+    }
+
+    private static void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] disabledActions) {
+        config.getExposureConfiguration()
+                .forDomainType(theClass)
+                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(disabledActions))
+                .withCollectionExposure((metdata, HttpMethods) -> HttpMethods.disable(disabledActions));
     }
 
     private void exposeIds(RepositoryRestConfiguration config) {
