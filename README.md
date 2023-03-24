@@ -16,6 +16,20 @@ Screenshot of how my application looks like right now:
 ![This is an image](/01-starter-files/01-starter-files/exampleScreenshot.png)
 
 
+#### Release 2.0!! We now have a checkout system!
+And the purchase gets store on our DB too!
+
+Screenshot from my checkout page:
+
+![This is an image](/01-starter-files/01-starter-files/CheckoutScreen.png)
+
+Screenshot from a succesful purchase:
+
+![This is an image](/01-starter-files/01-starter-files/OrderSuccesfully.png)
+
+Proof that our purchase gets Posted on our backend! (Tested with Postman):
+
+![This is an image](/01-starter-files/01-starter-files/JsonPostmanTestForPurchase_Result.png)
+
 Functionality pending to implement:
--Shopping Cart and Checkout.
--User login and Security.
+-User login and Security. (Release 3.0 and Final coming soon!!!)

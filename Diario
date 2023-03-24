@@ -26,3 +26,28 @@ y en especial para que te traiga los items por category.
 
 -El backend ya tenia soporte para entregar lista de productos segmentados en paginas (PAgeable), pero ahora adaptamos el frontend usando el bootstrap de Angular, ngb-pagination, y creando metodos en nuestros servicios, para que dado un numero de pagina, tamaño y id de la categoria, nos traiga nuestros productos segmentados.
 (TAmbien adaptamos esta dinamica de pagination a la barra de busqueda por texto, por keyword.)
+
+
+UPDATE 2
+
+--------------------------------------------------------------------------------------------------------
+-Se le agrega la funcionalidad del carrito CArt. Definimos los componentes CartItems y CartService para empezar, luego agregamos el Add to Cart a los productos, para que los agregue manejando factores como Subtotales y Cantidades.
+
+-Luego desarrollamos la pagina donde podemos ver los detalles de nuestro Carrito, que items les fuimos agregando, funcionalidades como:
+.Incrementar Cantidad
+.Decrementar Cantidad
+.Remover item del carrito.
+
+-Le agregamos la pagina de checkout, con shipping address, billing address y informacion sobre la tarjeta de credito. Scrolling options tanto en pais como provincia, vinculadas a la base de datos.
+Y validaciones de required y minima longitud en algunos campos, pattern para el mail, numero de tarjeta de credito y codigo de seguridad.
+Mini conteiner donde revisamos por ultima vez la compra, cantidad total y precio final. 
+
+Agregamos soporte desde el Backend para guardar las compras y llevar un registro. Un SQL script para las tablas y luego desde las entidades Customer, Order, OrderItems, Address (para envio y para factura).
+DAOs, DTOs, Servicios para el Checkout y el Controller del Checkout (/purchase)
+
+*En la carpeta de los scripts hay un JSON para probar esta funcionalidad directamente desde el backend con Postman!
+(http://localhost:8080/api/checkout/purchase)
+
+-Creamos el servicio Checkout para enviar la info al backend y recibir el tracking ticket. Tambien los componentes para que haya un b2b con los creados en springboot. OnSubmit, la app encerrara toda nuestra info de compra en purchase y es lo que sera almacenado.
+
+---------------------------------------------------------------------------------------------------------
